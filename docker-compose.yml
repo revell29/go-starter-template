@@ -1,0 +1,14 @@
+version: "2.3"
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: article_management_api
+    ports:
+      - 8080:8080
+    # depends_on:
+    #   mysql:
+    #     condition: service_healthy
+    volumes:
+      - ./config.json:/app/config.json
